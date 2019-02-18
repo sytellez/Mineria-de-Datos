@@ -1,0 +1,36 @@
+Los arboles de decisión son una técnica fundamentada en representaciones gráficas que permiten analizar decisiones secuenciales basadas en ciertas condiciones, es uno de los algoritmos de aprendizaje supervisado (existe una variable objetivo predefinida) más utilizados en Machine Learning. Algunas de sus características son:
+-	Los arboles de decisión utilizados en minería de datos son de dos tipos: clasificación o regresión.
+-	Las variables de entrada y salida pueden ser categóricas y continuas.
+-	Divide el espacio de predictores (variables independientes) en regiones distintas y no sobrepuestas.
+-	La construcción del árbol sigue un enfoque de división binaria recursiva (top-down greddy approach). Analiza la mejor variable para ramificación sólo en el proceso de división actual.
+-	 La comprensión de su funcionamiento suele ser simple y a la vez muy potente.
+-	El algoritmo es quien analizando los datos y las salidas -por eso es supervisado– decidirá la mejor forma de hacer las divisiones (split) entre nodos.
+-	Tendrá en cuenta de qué manera lograr una predicción (clasificación ó regresión) con mayor probabilidad de acierto.
+El árbol de clasificación es utilizado cuando se tienen diferentes alternativas, para este se establece un proceso binario de categorías y subcategorías por medio de ramificaciones que permiten predecir resultados en función de sus probabilidades asociadas.
+Los arboles de regresión identifican el resultado óptimo, es decir, un único resultado.
+Los Algoritmos de Árboles de decisión más utilizados son:
+- Algoritmo de Hunt: cada nodo en el árbol de decisión tiene asociado un subconjunto de los datos de entrenamiento.  Inicialmente, el nodo raíz tiene asociado todo el conjunto de entrenamiento. Las operaciones de expansión se realizan “primero en profundidad”. Lo complejo es encontrar el mejor split en cada operación de expansión. Número de splits a buscar depende de si el atributo es categórico o no y del tipo de split (e.g., complejo vs. simple).
+- ID3 (Iterative Dichotomiser 3): la técnica del ID3 es de búsqueda y construye árboles de decisión a partir de un conjunto de ejemplos. Estos ejemplos o tuplas están constituidos por un conjunto de atributos y un clasificador o clase. Algunas características son:
+Los dominios de los atributos y de las clases deben ser discretos
+Busqueda voraz top-down
+Basado en un criterio estadístico
+Slección de atributos mediante el principio de ganancia de información
+Favorece atributos con muchos valores. 
+Espacio de hipótesis completo
+Hipótesis única en cada momento de tiempo
+No se realiza “backtracking”
+Búsqueda no incremental
+Principio de “la navaja de Occam” (MDL)
+Saturación sobre los datos (“overfitting”)
+
+- C4.5: es una extensión del ID3 que acaba con muchas de sus limitaciones y es usado como clasificador (clasificador estadístico). El C4.5 genera un árbol de decisión a partir de los datos mediante particiones realizadas recursivamente, según la estrategia de profundidad-primero (depth-first). Antes de cada partición de datos, el algoritmo considera todas las pruebas posibles que pueden dividir el conjunto de datos y selecciona la prueba que resulta en la mayor ganancia de información o en la mayor proporción de ganancia de información. Para cada atributo continuo, se realiza una prueba binaria sobre cada uno de los valores que toma el atributo en los datos.
+La gran diferencia destacable entre los resultados que se obtienen con los algoritmos ID3 y C4.5, es el tamaño de los árboles de decisión, ya que como el C4.5 realiza una post-poda los árboles son generalmente de menor tamaño que los obtenidos con el ID3.
+- ID5R: para versiones dicotómicas en la decisión.
+- ACR: (Árboles de Clasificación y Regresión): Incluye dos tipos, 
+Los árboles de clasificación: cuando la salida predecida es la clase (discreta) a la que pertenecen los datos, es decir, clasifica los datos. 
+Los árboles de regresión: cuando la salida puede ser considerada un número real
+Algunas diferencias entre los dos radican en los criterios de división. Para seleccionar las variables usa los algorítmos GINI index o el Twoing criteria. 
+- CHAID (CHi-squared Automatic Interaction Detector): Se basa en la prueba de significancia ajustada, realiza divisiones multinivel para clasificación. Muy usado para predecir grupos de consumidores. Usa Chi-Cuadrado para la selección de variables.
+- MARS: Extiende los árboles de decisión para operar con datos numéricos con no linearidades e interacciones entre variables.
+- Árboles de Inferencia Condicional. Enfoque que utiliza pruebas no paramétricas como criterios de división, corregidos para múltiples pruebas para evitar el sobreajuste. Este enfoque se traduce en la selección de un predictor imparcial y no requiere poda.
+- QUEST (Quick, Unbiased, Efficient, Statistical Tree): Realiza particiones en combinaciones lineales entre variables. Para la selección de variables usa, chi-cuadrado para las categóricas y J-way ANOVA para las continuas u ordinales.
