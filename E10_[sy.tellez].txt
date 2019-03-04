@@ -1,0 +1,32 @@
+ARTICULO: Do we Need Hundreds of Classifiers to Solve Real World Classification Problems?
+
+El artículo fue publicado en octubre del 2014 y escrito en el 2013, por manuel Fernández-Delgado, Eva Cernadas, Senén Barro y Dinani Anorim, investigadores de las universidades de Santiago de Compostela (España) y del Estado de Bahía (Brasil).
+
+¿Se necesitan cientos de modelos para resolver problemas de clasificación de la vida real?
+
+La discusión del artículo se centra en la documentación y comparación de los métodos para resolver problemas de clasificación en la vida real.
+ 
+El artículo propone una revisión de 179 algorítmos de Machine Learning de clasificación aplicado a 121 bases de datos de acceso público, con el fin de determinar si estadísticamente existe un algorítmo que sea mejor que todos para cualquier base de datos. Sin embargo, no es posible generalizar un modelo de Machine Learning que sea el mejor para todas las bases de datos.
+
+Generalmente un experto aplicara lo que mejor conoce, lo que cree que funciona mejor, aplicar modelos diferentes o más comunes en otras áreas de investigación será más  complejo para el equipo, lo que generalmente se traduce en una limitación porque puede haber métodos más eficientes pero que por desconocimiento pueden ser considerados como “muy complejos”.
+
+Aun no es posible obtener la máxima precisión con ningún algoritmo, así que se asume que la mayor precisión obtenida es la mayor que se puede obtener, en el momento del estudio. Esto no quiere decir que no surja un nuevo algorítmo con mejores rendimientos en el futuro.
+
+Ahora bien, comparar un gran número de modelos y parámetros puede llegar a magnificar y aumentar tiempos de respuesta, en este sentido, el artículo responde a este interrogante haciendo un análisis con un gran número de clasificadores provenientes de diferentes familias y áreas de conocimiento y con una gran colección de conjuntos de datos.
+
+El objetivo final es  poder encontrar el clasificador que probablemente alcance el mejor rendimiento para cualquier data set, por lo que el autor pretende obtener esta respuesta a través del análisis de un conjunto de datasets siguiendo los siguientes pasos:
+
+1. Seleccionar la mejor familia y mejor clasificador para la colección de datos seleccionados.
+2. Rankiar cada clasificador con el accuracy.
+3. Determinar para cada clasificador, la probabilidad de alcanzar el mejor accuracy. 
+4. Evaluar el comportamiento del clasificador variando propiedades de los data sets.
+
+Al realizar el experimento y validarlo se obtuvo:	
+
+Se encontró que para las bases de datos usadas el mejor algorítmo fue el de Random Forest Paralelo (el cual obtuvo la más alta precisión : 94,1%) y el que obtuvo mejores precisiones para la mayoría de las bases de datos (mejor precisión en 102 de 121 bases de datos). De igual forma, a este modelo le realizaron ajuste en el parámetro mtry (en R con el paquete caret).
+
+Le sigue el Random Forest con una menor precisión máxima, pero con un promedio ligeramente mayor. Seis algorítmos de Random Forest y 5 de SVM (Máquinas de Soporte Vectorial), son los que mejores precisiones obtuvieron en el top 20 de clasificadores.
+
+Este estudio por tanto, plantea una interesante conclusión, en la que en general, los mejores resultados se obtendrán con calsificadores de la familia Random Forest y SVM, principalmente, se espera que el mejor modelo se haría con el Random Forest Paralelo.
+
+
