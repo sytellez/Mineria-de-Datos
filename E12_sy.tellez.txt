@@ -1,0 +1,25 @@
+E12 - Gradient Boosting Review_por sy.tellez
+E12 - Revisión de aumento de gradiente
+Busque y comente las principales diferencias entre los algoritmos implementados en:
+(1) Clasificador de aumento de gradiente
+(2) Clasificador XGB
+
+Iniciemos recordado que el Gradient Boosting (Potenciación del gradiente), es una técnica de aprendizaje automático (Machine Learning), el cual es utilizado para el análisis de la regresión y para problemas de clasificación estadística, el cual produce un modelo predictivo en forma de un conjunto de modelos de predicción débiles (árboles de decisión).  Es así como construye el modelo predictivo de forma escalonada como lo hacen otros métodos de boosting, mejorarando la precisión debido a que en cada iteración se clasifican los residuos del modelo anterior, es decir, cada iteración reduce el error generado por las iteraciones previas, sin tener que crear un modelo complejo.
+En definitiva, se define el Gradient Boosting, como una técnica que emplea el “boosting” para minimizar los errores de los aprendices simples empleando el procedimiento de Gradiente Descendiente. La idea principal detrás de este algoritmo es construir nuevos aprendices de base que puedan correlacionarse al máximo con el gradiente negativo de la función de pérdida, asociado con el conjunto completo.
+Es casual, que se use Random Forest Classifier para realizar cada clasificación dado que es un buen clasificador.
+Los elementos principales del Gradient Boosting son:
+-	Función a minimizar: normalmente para problemas de regresión se emplean los errores cuadrados y para problemas de clasificación se usa la “logistic loss”.
+-	Aprendices simples: se emplean arboles de decisión como modelos simples.
+-	Modelos añadidos: modelos a ensamblar. Se añade un árbol para cada iteración. Los arboles existentes no se alteran.
+Es te método genera muy buenos resultados, sin embargo, el costo computacional puede llegar a ser muy alto, y si se está trabajando con una base de datos muy grande o con muchas variables, es posible que este método no sea el adecuado, por tal motivo, ha surgido el XGBoosting (Extreme Gradient Boosting), el cual es una implementación avanzada de un algoritmo Gradient Boosting. 
+Dentro de los modelos y algoritmos predictivos que se utilizan más, se encuentra que la técnica más empleada y con mayores éxitos es el Extreme Gradient Boosting (XGB). Este método se basa en el Gradient Boosting (GB), el término “extreme” se refiere al objetivo de llevar al límite los recursos computacionales de la técnica de Gradient Boosting (GB) con el fin de obtener mejores resultados.
+Este algoritmo fue creado por Tianqi Chen (un estudiante de la Universidad de Washington) y su creación surgió con la idea de establecer un sistema escalable del algoritmo Gradient Boosting (GB), por  lo que al final se obtuvo un algoritmo con las siguientes mejoras:
+-	Regularización: con la finalidad de evitar el over-fitting o sobre entrenamiento. Otras implementaciones del Gradient Boosting no tienen regularización.
+-	Procesamiento en paralelo: como su nombre lo indica, el XGB permite procesamiento en paralelo y es mucho más rápido que otras implementaciones del GB.
+-	Mayor Flexibilidad: permite a los usuarios definir sus propias funciones de optimización y criterios de evaluación.
+-	Buit-in Cross-Validation: Permite al usuario ejecutar cross-validation (se refiere a la técnica para evaluar los resultados y garantizar que son independientes entre los datos de entrenamiento y de prueba) en cada una de las iteraciones.
+-	Continuar en el modelo existente: Permite a los usuarios retomar un proceso de entrenamiento que se había dejado a medias. Lo que puede ser una ventaja significativa en ciertas aplicaciones.
+Este algoritmo está dominando las resoluciones de Machine Learning de la plataforma Kaggle. 
+
+
+
