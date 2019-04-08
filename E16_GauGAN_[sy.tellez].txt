@@ -1,0 +1,32 @@
+# E14 - Resumen de procesamiento de lenguaje natural
+La investigación de un producto comercial que utiliza la PNL como núcleo (por ejemplo, el asistente de Google) y describe, en general, las técnicas de PNL que utiliza.
+(Si dos de ustedes tienen el mismo producto comercial, ambas calificaciones serán penalizadas --- ¡Sea creativo!)
+
+GauGAN: herramienta de Nvidia que permite crear paisajes 'fake' a partir de simples bocetos
+ 
+Imagen: Blogs.nvidia.com
+
+GauGAN es una nueva herramienta (software) creada por la compañía Nvidia, la cual a través de tecnología de inteligencia artificial es capaz de generar paisajes realistas partiendo de simples trazos “garabatos”. Su nombre fue dado en honor al pintor postimpresionista Paul Gauguin (París 1848 a 1903), quien pintó varios autorretratos, el uso experimental del color y su estilo sintetista, fueron elementos claves para su distinción respecto al impresionismo.
+Con solo unos cuantos clicks y trazos en una app parecida a MS Paint, cualquiera puede crear un dibujo que después es traducido en un paisaje sorprendentemente realista. El modelo de aprendizaje profundo de NVIDIA toma el boceto original y usa redes de confrontación generativas  para crear una obra maestra fotorrealista con él.
+GauGAN tiene tres herramientas: un pote de pintura, un bolígrafo y un lápiz. En la parte inferior de la pantalla hay una serie de objetos. 
+Los usuarios pueden usar las herramientas de entrada para dibujar la forma de un árbol y producirá un árbol. Si uno dibuja una línea recta, se producirá un tronco y si se completa con una mancha en la parte superior, el software lo llenará con hojas. De esta forma se producirá un árbol completo.
+
+¿Cómo funciona?
+La herramienta aprovecha las redes generativas antagónicas o redes de confrontación generativas (GAN´s, por sus siglas en inglés) para convertir los mapas de segmentación en imágenes reales. En el aprendizaje automático, un modelo generativo aprende a generar muestras que tienen una alta probabilidad de ser muestras reales, como las muestras del conjunto de datos de entrenamiento. La red neuronal rellena la imagen con detalles, texturas, reflejos, sombras y colores basándose en lo que ha aprendido sobre imágenes reales.
+Las GAN´s son una clase de algoritmos de inteligencia artificial que se utilizan en el aprendizaje no supervisado (método de aprendizaje automático donde un modelo es ajustado a las observaciones), implementadas por un sistema de dos redes neuronales que compiten mutuamente en una especie de juego de suma cero. En el aprendizaje profundo, las GAN tienen el potencial de crear sistemas que aprenden más con menos ayuda de los humanos. 
+En el método de las GAN´S en lugar de entrenar una única red neuronal para reconocer imágenes, se entrenan a dos redes en competencia. Una red genera los candidatos y otra los evalúa. La red generativa aprende a asignar elementos de un espacio latente a una distribución de datos determinada, mientras la red discriminativa diferencia entre elementos de la distribución de datos originales y los candidatos producidos por el generador. El objetivo del aprendizaje de la red generativa es aumentar el índice de error de la red discriminativa (o sea, "engañar" a la red discriminativa produciendo nuevos elementos sintéticos que parecen provenir de la distribución de datos auténticos).
+Por lo tanto se determina que la configuración típica de GAN comprende dos agentes:
+-	un generador G que produce muestras, y
+-	un Discriminador D que recibe muestras tanto de G como del conjunto de datos.
+G y D tienen objetivos en competencia (de ahí el término "adversarial" en las redes generativas de adversarios): D debe aprender a distinguir entre sus dos fuentes, mientras que G debe aprender a hacer que D crea que las muestras que genera son del conjunto de datos.
+ 
+    Imagen: Por Greg Heinrich |20 de abril de 2017 - blognvidia
+
+El generador está "sembrado" con una entrada aleatorizada que se escoge de un espacio latente predefinido (p. ej. una distribución normal multivariante). Después, las muestras sintetizadas por el generador son evaluadas por el discriminador. En ambas redes se aplica la retropropagación, de modo que el generador produce imágenes progresivamente mejores, mientras el discriminador se refina cada vez más a la hora de distinguir esas imágenes sintéticas.
+Por lo que a pesar de la falta de comprensión del mundo físico, las GAN pueden producir resultados convincentes debido a su estructura como un par de redes que cooperan: un generador y un discriminador. El generador crea las imágenes que presenta al discriminador. Entrenado en imágenes reales, el discriminador entrena al generador con retroalimentación píxel por píxel sobre cómo mejorar el realismo de sus imágenes sintéticas.
+Después de entrenar con imágenes reales, el discriminador sabe que los estanques y lagos reales contienen reflejos, por lo que el generador aprende a crear una imitación convincente. Incluso se puede ver el mismo paisaje en varias estaciones al escoger entre pasto y nieve. NVIDIA espera que el programa sea útil para personas que diseñan mundos virtuales, como arquitectos, paisajistas y desarrolladores de juegos, que con la inteligencia artificial que entiende cómo se ve el mundo real, estos profesionales podrían crear mejores prototipos de ideas y hacer cambios rápidos en una escena sintética.
+También es importante destacar que, GauGAN es multimodal. Si dos usuarios crean el mismo boceto con la misma configuración, los números aleatorios integrados en el proyecto aseguran que el software genere resultados diferentes, ya que el programa fue entrenado usando millones de imágenes, y este conocimiento le permite afinar sus paisajes.
+
+Referencias:
+Blogs.nvidia.com
+ 
